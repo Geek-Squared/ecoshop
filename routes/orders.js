@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
+const Order = require("../models/order");
 
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
+    // fetch all orders from database
+    const orders = await Order.find();
     res.status(200).json({
-      message: "Orders were fetched",
+      message: "Orders fetched",
+      orders: orders,
     });
   } catch (error) {
     res.status(500).json({

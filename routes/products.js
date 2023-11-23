@@ -3,9 +3,9 @@ const router = express.Router();
 const Product = require("../models/product");
 const mongoose = require("mongoose");
 
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
-    const products = Product.find();
+    const products = await Product.find();
     res.status(200).json({
       message: "Products fetched",
       products: products,

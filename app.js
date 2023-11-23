@@ -26,8 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
+app.use('/product', productRoutes);
+app.use('/order', orderRoutes);
 
 const port = process.env.PORT || 3001;
 

@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const User = require("../models/user");
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
+router.get("/", async function (req, res, next) {
   try {
     // get all users from database
-    const users = User.find();
+    const users = await User.find();
     res.status(200).json({
       message: "Users fetched",
       users: users,
