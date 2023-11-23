@@ -35,7 +35,7 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-const dbUrl = process.env.MONGO_CONNECTION_STRING;
+const dbUrl = 'mongodb+srv://msngwelz:ZTbpQWOI4uJGAvud@cluster0.7bf2vsr.mongodb.net/';
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
